@@ -1,30 +1,68 @@
 package com.example.shareholder_management.shareholder;
 
-
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 public class ShareholderDTO {
 
+    @NotBlank(message = "Folio/BO number is required")
+    @Size(max = 16, message = "Folio/BO number cannot exceed 16 characters")
     private String folioBo;
+
+    @NotNull(message = "Customer type is required")
     private Integer customerType;
+
+    @NotBlank(message = "Shareholder name is required")
+    @Size(max = 100, message = "Shareholder name cannot exceed 100 characters")
     private String shareholderName;
+
+    @Size(max = 80, message = "Representative cannot exceed 80 characters")
     private String representative;
 
     private Integer citizenType;
+
+    @NotNull(message = "Please select whether the shareholder is an employee")
     private Integer isEmployee;
+
+    @NotBlank(message = "Residence type is required")
+    @Size(max = 15, message = "Residence type cannot exceed 15 characters")
     private String residenceType;
 
+    @Size(max = 17, message = "NID cannot exceed 17 characters")
     private String nid;
+
+    @Size(max = 11, message = "Phone number cannot exceed 11 characters")
     private String phone;
+
+    @Size(max = 12, message = "TIN cannot exceed 12 characters")
     private String tin;
+
+    @Email(message = "Please enter a valid email address")
+    @Size(max = 60, message = "Email cannot exceed 60 characters")
     private String email;
 
+    @NotBlank(message = "Registration date is required")
     private String registrationDate;
+
     private Integer icbCode;
 
+    @NotBlank(message = "Address is required")
+    @Size(max = 80, message = "Address cannot exceed 80 characters")
     private String add1;
+
+    @Size(max = 80, message = "Address cannot exceed 80 characters")
     private String add2;
+
+    @Size(max = 80, message = "Address cannot exceed 80 characters")
     private String add3;
+
+    @Size(max = 80, message = "Address cannot exceed 80 characters")
     private String add4;
+
+    @NotBlank(message = "Country name is required")
+    @Size(max = 60, message = "Country name cannot exceed 60 characters")
     private String countryName;
 
     private String bankName;
