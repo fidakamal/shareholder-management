@@ -14,289 +14,523 @@
 
 <body>
 
-
-
-<div class="container mt-5">
-
-
+<div class="container mt-5 mb-5">
 
     <h2 class="mb-4">Shareholder Registration</h2>
 
-    <!-- Basic Information -->
-    <div class="card mb-4">
+    <form>
 
-        <div class="card-header">
-            <h5 class="mb-0">Basic Information</h5>
+        <!-- ==================== BASIC INFORMATION ==================== -->
+        <div class="card mb-4">
+
+            <div class="card-header">
+                <h5 class="mb-0">Basic Information</h5>
+            </div>
+
+            <div class="card-body">
+
+                <!-- FOLIO/BO NUMBER + CUSTOMER TYPE -->
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+                        <label for="folioBo" class="form-label">
+                            FOLIO/BO NUMBER <span class="text-danger">*</span>
+                        </label>
+
+                        <input type="text"
+                               id="folioBo"
+                               name="folioBo"
+                               class="form-control">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="customerType" class="form-label">
+                            CUSTOMER TYPE <span class="text-danger">*</span>
+                        </label>
+
+                        <select id="customerType"
+                                name="customerType"
+                                class="form-select">
+
+                            <option value="">Select Customer Type</option>
+
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <!-- SHAREHOLDER NAME + REPRESENTATIVE -->
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+                        <label for="shareholderName" class="form-label">
+                            SHAREHOLDER NAME <span class="text-danger">*</span>
+                        </label>
+
+                        <input type="text"
+                               id="shareholderName"
+                               name="shareholderName"
+                               class="form-control">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="representative" class="form-label">
+                            REPRESENTATIVE (IF ANY)
+                        </label>
+
+                        <input type="text"
+                               id="representative"
+                               name="representative"
+                               class="form-control">
+                    </div>
+
+                </div>
+
+
+                <!-- CITIZEN TYPE + IS EMPLOYEE -->
+                <div class="row">
+
+                    <!-- Citizen Type -->
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+                            CITIZEN TYPE
+                        </label>
+
+                        <div>
+
+                            <div class="form-check form-check-inline">
+
+                                <input class="form-check-input"
+                                       type="radio"
+                                       name="citizenType"
+                                       id="local"
+                                       value="1"
+                                       checked>
+
+                                <label class="form-check-label" for="local">
+                                    Local
+                                </label>
+
+                            </div>
+
+                            <div class="form-check form-check-inline">
+
+                                <input class="form-check-input"
+                                       type="radio"
+                                       name="citizenType"
+                                       id="foreign"
+                                       value="2">
+
+                                <label class="form-check-label" for="foreign">
+                                    Foreign
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Is Employee -->
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+                            IS EMPLOYEE <span class="text-danger">*</span>
+                        </label>
+
+                        <div>
+
+                            <div class="form-check form-check-inline">
+
+                                <input class="form-check-input"
+                                       type="radio"
+                                       name="isEmployee"
+                                       id="employeeNo"
+                                       value="0"
+                                       checked>
+
+                                <label class="form-check-label" for="employeeNo">
+                                    No
+                                </label>
+
+                            </div>
+
+                            <div class="form-check form-check-inline">
+
+                                <input class="form-check-input"
+                                       type="radio"
+                                       name="isEmployee"
+                                       id="employeeYes"
+                                       value="1">
+
+                                <label class="form-check-label" for="employeeYes">
+                                    Yes
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RESIDENCE TYPE + NID -->
+                <div class="row">
+
+                    <!-- Residence Type -->
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+                            RESIDENCE TYPE
+                        </label>
+
+                        <div>
+
+                            <div class="form-check form-check-inline">
+
+                                <input class="form-check-input"
+                                       type="radio"
+                                       name="residenceType"
+                                       id="resident"
+                                       value="Resident"
+                                       checked>
+
+                                <label class="form-check-label" for="resident">
+                                    Resident
+                                </label>
+
+                            </div>
+
+                            <div class="form-check form-check-inline">
+
+                                <input class="form-check-input"
+                                       type="radio"
+                                       name="residenceType"
+                                       id="nonResident"
+                                       value="Non-Resident">
+
+                                <label class="form-check-label" for="nonResident">
+                                    Non-Resident
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- NID -->
+                    <div class="col-md-6 mb-3">
+
+                        <label for="nid" class="form-label">
+                            NID
+                        </label>
+
+                        <input type="text"
+                               id="nid"
+                               name="nid"
+                               class="form-control">
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHONE NUMBER + TIN -->
+                <div class="row">
+
+                    <!-- Phone Number -->
+                    <div class="col-md-6 mb-3">
+
+                        <label for="phone" class="form-label">
+                            PHONE NUMBER
+                        </label>
+
+                        <input type="tel"
+                               id="phone"
+                               name="phone"
+                               class="form-control">
+
+                    </div>
+
+
+                    <!-- TIN -->
+                    <div class="col-md-6 mb-3">
+
+                        <label for="tin" class="form-label">
+                            TIN
+                        </label>
+
+                        <input type="text"
+                               id="tin"
+                               name="tin"
+                               class="form-control">
+
+                    </div>
+
+                </div>
+
+
+                <!-- EMAIL + REGISTRATION DATE -->
+                <div class="row">
+
+                    <!-- Email -->
+                    <div class="col-md-6 mb-3">
+
+                        <label for="email" class="form-label">
+                            EMAIL
+                        </label>
+
+                        <input type="email"
+                               id="email"
+                               name="email"
+                               class="form-control">
+
+                    </div>
+
+
+                    <!-- Registration Date -->
+                    <div class="col-md-6 mb-3">
+
+                        <label for="registrationDate" class="form-label">
+                            REGISTRATION DATE <span class="text-danger">*</span>
+                        </label>
+
+                        <input type="date"
+                               id="registrationDate"
+                               name="registrationDate"
+                               class="form-control">
+
+                    </div>
+
+                </div>
+
+
+                <!-- ICB CODE -->
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label for="icbCode" class="form-label">
+                            ICB CODE
+                        </label>
+
+                        <input type="text"
+                               id="icbCode"
+                               name="icbCode"
+                               class="form-control">
+
+                    </div>
+
+                </div>
+
+            </div>
         </div>
 
-        <div class="card-body">
 
-            <div class="row">
+        <!-- ==================== ADDRESS ==================== -->
+        <div class="card mb-4">
 
-                <!-- Folio/BO Number -->
-                <div class="col-md-6 mb-3">
-                    <label for="folioBo" class="form-label">
-                        FOLIO/BO NUMBER <span class="text-danger">*</span>
-                    </label>
-
-                    <input type="text"
-                           id="folioBo"
-                           name="folioBo"
-                           class="form-control">
-                </div>
-
-                <!-- Customer Type -->
-                <div class="col-md-6 mb-3">
-                    <label for="customerType" class="form-label">
-                        CUSTOMER TYPE <span class="text-danger">*</span>
-                    </label>
-
-                    <select id="customerType"
-                            name="customerType"
-                            class="form-select">
-
-                        <option value="">Select Customer Type</option>
-
-                    </select>
-                </div>
-
+            <div class="card-header">
+                <h5 class="mb-0">Address</h5>
             </div>
 
-            <div class="row">
+            <div class="card-body">
 
-                <!-- Shareholder Name -->
-                <div class="col-md-6 mb-3">
-                    <label for="shareholderName" class="form-label">
-                        SHAREHOLDER NAME <span class="text-danger">*</span>
-                    </label>
+                <!-- ADD1 + ADD3 -->
+                <div class="row">
 
-                    <input type="text"
-                           id="shareholderName"
-                           name="shareholderName"
-                           class="form-control">
-                </div>
+                    <div class="col-md-6 mb-3">
 
-                <!-- Representative -->
-                <div class="col-md-6 mb-3">
-                    <label for="representative" class="form-label">
-                        REPRESENTATIVE (IF ANY)
-                    </label>
+                        <label for="add1" class="form-label">
+                            ADD1 <span class="text-danger">*</span>
+                        </label>
 
-                    <input type="text"
-                           id="representative"
-                           name="representative"
-                           class="form-control">
-                </div>
+                        <input type="text"
+                               id="add1"
+                               name="add1"
+                               class="form-control">
 
-            </div>
-
-            <div class="row">
-
-                <!-- Citizen Type -->
-                <div class="col-md-6 mb-3">
-                    <label class="form-label">
-                        CITIZEN TYPE
-                    </label>
-
-                    <div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input"
-                                   type="radio"
-                                   name="citizenType"
-                                   id="local"
-                                   value="1"
-                                   checked>
-
-                            <label class="form-check-label" for="local">
-                                Local
-                            </label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input"
-                                   type="radio"
-                                   name="citizenType"
-                                   id="foreign"
-                                   value="2">
-
-                            <label class="form-check-label" for="foreign">
-                                Foreign
-                            </label>
-                        </div>
                     </div>
-                </div>
 
 
-                <!-- Is Employee -->
-                <div class="col-md-6 mb-3">
-                    <label class="form-label">
-                        IS EMPLOYEE <span class="text-danger">*</span>
-                    </label>
+                    <div class="col-md-6 mb-3">
 
-                    <div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input"
-                                   type="radio"
-                                   name="isEmployee"
-                                   id="employeeNo"
-                                   value="0"
-                                   checked>
+                        <label for="add3" class="form-label">
+                            ADD3
+                        </label>
 
-                            <label class="form-check-label" for="employeeNo">
-                                No
-                            </label>
-                        </div>
+                        <input type="text"
+                               id="add3"
+                               name="add3"
+                               class="form-control">
 
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input"
-                                   type="radio"
-                                   name="isEmployee"
-                                   id="employeeYes"
-                                   value="1">
-
-                            <label class="form-check-label" for="employeeYes">
-                                Yes
-                            </label>
-                        </div>
                     </div>
+
                 </div>
 
-            </div>
 
-            <div class="row">
+                <!-- ADD2 + ADD4 -->
+                <div class="row">
 
-                <!-- Residence Type -->
-                <div class="col-md-6 mb-3">
-                    <label class="form-label">
-                        RESIDENCE TYPE
-                    </label>
+                    <div class="col-md-6 mb-3">
 
-                    <div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input"
-                                   type="radio"
-                                   name="residenceType"
-                                   id="resident"
-                                   value="Resident"
-                                   checked>
+                        <label for="add2" class="form-label">
+                            ADD2
+                        </label>
 
-                            <label class="form-check-label" for="resident">
-                                Resident
-                            </label>
-                        </div>
+                        <input type="text"
+                               id="add2"
+                               name="add2"
+                               class="form-control">
 
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input"
-                                   type="radio"
-                                   name="residenceType"
-                                   id="nonResident"
-                                   value="Non-Resident">
-
-                            <label class="form-check-label" for="nonResident">
-                                Non-Resident
-                            </label>
-                        </div>
                     </div>
+
+
+                    <div class="col-md-6 mb-3">
+
+                        <label for="add4" class="form-label">
+                            ADD4
+                        </label>
+
+                        <input type="text"
+                               id="add4"
+                               name="add4"
+                               class="form-control">
+
+                    </div>
+
                 </div>
 
 
-                <!-- NID -->
-                <div class="col-md-6 mb-3">
-                    <label for="nid" class="form-label">
-                        NID
-                    </label>
+                <!-- COUNTRY NAME -->
+                <div class="row">
 
-                    <input type="text"
-                           id="nid"
-                           name="nid"
-                           class="form-control">
-                </div>
+                    <div class="col-md-6 mb-3">
 
-            </div>
+                        <label for="countryName" class="form-label">
+                            COUNTRY NAME <span class="text-danger">*</span>
+                        </label>
 
-            <div class="row">
+                        <input type="text"
+                               id="countryName"
+                               name="countryName"
+                               class="form-control">
 
-                <!-- Phone Number -->
-                <div class="col-md-6 mb-3">
-                    <label for="phone" class="form-label">
-                        PHONE NUMBER
-                    </label>
+                    </div>
 
-                    <input type="tel"
-                           id="phone"
-                           name="phone"
-                           class="form-control">
-                </div>
-
-
-                <!-- TIN -->
-                <div class="col-md-6 mb-3">
-                    <label for="tin" class="form-label">
-                        TIN
-                    </label>
-
-                    <input type="text"
-                           id="tin"
-                           name="tin"
-                           class="form-control">
                 </div>
 
             </div>
+        </div>
 
-            <div class="row">
 
-                <!-- Email -->
-                <div class="col-md-6 mb-3">
-                    <label for="email" class="form-label">
-                        EMAIL
-                    </label>
+        <!-- ==================== BANK INFORMATION ==================== -->
+        <div class="card mb-4">
 
-                    <input type="email"
-                           id="email"
-                           name="email"
-                           class="form-control">
+            <div class="card-header">
+                <h5 class="mb-0">Bank Information</h5>
+            </div>
+
+            <div class="card-body">
+
+                <!-- BANK NAME + BRANCH NAME -->
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+
+                        <label for="bankName" class="form-label">
+                            BANK NAME
+                        </label>
+
+                        <input type="text"
+                               id="bankName"
+                               name="bankName"
+                               class="form-control">
+
+                    </div>
+
+
+                    <div class="col-md-6 mb-3">
+
+                        <label for="branchName" class="form-label">
+                            BRANCH NAME
+                        </label>
+
+                        <input type="text"
+                               id="branchName"
+                               name="branchName"
+                               class="form-control">
+
+                    </div>
+
                 </div>
 
 
-                <!-- Registration Date -->
-                <div class="col-md-6 mb-3">
-                    <label for="registrationDate" class="form-label">
-                        REGISTRATION DATE <span class="text-danger">*</span>
-                    </label>
+                <!-- ACCOUNT NUMBER + ROUTING NUMBER -->
+                <div class="row">
 
-                    <input type="date"
-                           id="registrationDate"
-                           name="registrationDate"
-                           class="form-control">
+                    <div class="col-md-6 mb-3">
+
+                        <label for="accountNumber" class="form-label">
+                            ACCOUNT NUMBER
+                        </label>
+
+                        <input type="text"
+                               id="accountNumber"
+                               name="accountNumber"
+                               class="form-control">
+
+                    </div>
+
+
+                    <div class="col-md-6 mb-3">
+
+                        <label for="routingNumber" class="form-label">
+                            ROUTING NUMBER
+                        </label>
+
+                        <input type="text"
+                               id="routingNumber"
+                               name="routingNumber"
+                               class="form-control">
+
+                    </div>
+
                 </div>
 
             </div>
-
-            <div class="row">
-
-                <!-- Empty left column -->
-                <div class="col-md-6 mb-3">
-                </div>
+        </div>
 
 
-                <!-- ICB Code -->
-                <div class="col-md-6 mb-3">
-                    <label for="icbCode" class="form-label">
-                        ICB CODE
-                    </label>
+        <!-- ==================== ACTIONS ==================== -->
+        <div class="d-flex justify-content-center gap-2 mb-5">
 
-                    <input type="text"
-                           id="icbCode"
-                           name="icbCode"
-                           class="form-control">
-                </div>
+            <button type="submit" class="btn btn-primary">
+                Submit
+            </button>
 
-            </div>
+            <button type="button"
+                    class="btn btn-secondary"
+                    onclick="history.back()">
+                Cancel
+            </button>
 
         </div>
-    </div>
+
+    </form>
 
 </div>
 
 </body>
 </html>
+
