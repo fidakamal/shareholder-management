@@ -18,7 +18,9 @@
 
     <h2 class="mb-4">Shareholder Registration</h2>
 
-    <form th:action="@{/shareholders}" th:object="${shareholder}" method="post">
+    <form th:action="@{/shareholders}"
+          th:object="${shareholder}"
+          method="post">
 
         <!-- ==================== BASIC INFORMATION ==================== -->
         <div class="card mb-4">
@@ -32,29 +34,38 @@
                 <!-- FOLIO/BO NUMBER + CUSTOMER TYPE -->
                 <div class="row">
 
+                    <!-- Folio/BO Number -->
                     <div class="col-md-6 mb-3">
+
                         <label for="folioBo" class="form-label">
                             FOLIO/BO NUMBER <span class="text-danger">*</span>
                         </label>
 
                         <input type="text"
                                id="folioBo"
-                               name="folioBo"
+                               th:field="*{folioBo}"
                                class="form-control">
+
                     </div>
 
+
+                    <!-- Customer Type -->
                     <div class="col-md-6 mb-3">
+
                         <label for="customerType" class="form-label">
                             CUSTOMER TYPE <span class="text-danger">*</span>
                         </label>
 
                         <select id="customerType"
-                                name="customerType"
+                                th:field="*{customerType}"
                                 class="form-select">
 
-                            <option value="">Select Customer Type</option>
+                            <option value="">
+                                Select Customer Type
+                            </option>
 
                         </select>
+
                     </div>
 
                 </div>
@@ -63,26 +74,33 @@
                 <!-- SHAREHOLDER NAME + REPRESENTATIVE -->
                 <div class="row">
 
+                    <!-- Shareholder Name -->
                     <div class="col-md-6 mb-3">
+
                         <label for="shareholderName" class="form-label">
                             SHAREHOLDER NAME <span class="text-danger">*</span>
                         </label>
 
                         <input type="text"
                                id="shareholderName"
-                               name="shareholderName"
+                               th:field="*{shareholderName}"
                                class="form-control">
+
                     </div>
 
+
+                    <!-- Representative -->
                     <div class="col-md-6 mb-3">
+
                         <label for="representative" class="form-label">
                             REPRESENTATIVE (IF ANY)
                         </label>
 
                         <input type="text"
                                id="representative"
-                               name="representative"
+                               th:field="*{representative}"
                                class="form-control">
+
                     </div>
 
                 </div>
@@ -104,10 +122,9 @@
 
                                 <input class="form-check-input"
                                        type="radio"
-                                       name="citizenType"
+                                       th:field="*{citizenType}"
                                        id="local"
-                                       value="1"
-                                       checked>
+                                       value="1">
 
                                 <label class="form-check-label" for="local">
                                     Local
@@ -115,11 +132,12 @@
 
                             </div>
 
+
                             <div class="form-check form-check-inline">
 
                                 <input class="form-check-input"
                                        type="radio"
-                                       name="citizenType"
+                                       th:field="*{citizenType}"
                                        id="foreign"
                                        value="2">
 
@@ -147,10 +165,9 @@
 
                                 <input class="form-check-input"
                                        type="radio"
-                                       name="isEmployee"
+                                       th:field="*{isEmployee}"
                                        id="employeeNo"
-                                       value="0"
-                                       checked>
+                                       value="0">
 
                                 <label class="form-check-label" for="employeeNo">
                                     No
@@ -158,11 +175,12 @@
 
                             </div>
 
+
                             <div class="form-check form-check-inline">
 
                                 <input class="form-check-input"
                                        type="radio"
-                                       name="isEmployee"
+                                       th:field="*{isEmployee}"
                                        id="employeeYes"
                                        value="1">
 
@@ -195,10 +213,9 @@
 
                                 <input class="form-check-input"
                                        type="radio"
-                                       name="residenceType"
+                                       th:field="*{residenceType}"
                                        id="resident"
-                                       value="Resident"
-                                       checked>
+                                       value="Resident">
 
                                 <label class="form-check-label" for="resident">
                                     Resident
@@ -206,11 +223,12 @@
 
                             </div>
 
+
                             <div class="form-check form-check-inline">
 
                                 <input class="form-check-input"
                                        type="radio"
-                                       name="residenceType"
+                                       th:field="*{residenceType}"
                                        id="nonResident"
                                        value="Non-Resident">
 
@@ -234,7 +252,7 @@
 
                         <input type="text"
                                id="nid"
-                               name="nid"
+                               th:field="*{nid}"
                                class="form-control">
 
                     </div>
@@ -254,7 +272,7 @@
 
                         <input type="tel"
                                id="phone"
-                               name="phone"
+                               th:field="*{phone}"
                                class="form-control">
 
                     </div>
@@ -269,7 +287,7 @@
 
                         <input type="text"
                                id="tin"
-                               name="tin"
+                               th:field="*{tin}"
                                class="form-control">
 
                     </div>
@@ -289,7 +307,7 @@
 
                         <input type="email"
                                id="email"
-                               name="email"
+                               th:field="*{email}"
                                class="form-control">
 
                     </div>
@@ -304,7 +322,7 @@
 
                         <input type="date"
                                id="registrationDate"
-                               name="registrationDate"
+                               th:field="*{registrationDate}"
                                class="form-control">
 
                     </div>
@@ -326,7 +344,7 @@
 
                         <input type="text"
                                id="icbCode"
-                               name="icbCode"
+                               th:field="*{icbCode}"
                                class="form-control">
 
                     </div>
@@ -349,6 +367,7 @@
                 <!-- ADD1 + ADD3 -->
                 <div class="row">
 
+                    <!-- ADD1 -->
                     <div class="col-md-6 mb-3">
 
                         <label for="add1" class="form-label">
@@ -357,12 +376,13 @@
 
                         <input type="text"
                                id="add1"
-                               name="add1"
+                               th:field="*{add1}"
                                class="form-control">
 
                     </div>
 
 
+                    <!-- ADD3 -->
                     <div class="col-md-6 mb-3">
 
                         <label for="add3" class="form-label">
@@ -371,7 +391,7 @@
 
                         <input type="text"
                                id="add3"
-                               name="add3"
+                               th:field="*{add3}"
                                class="form-control">
 
                     </div>
@@ -382,6 +402,7 @@
                 <!-- ADD2 + ADD4 -->
                 <div class="row">
 
+                    <!-- ADD2 -->
                     <div class="col-md-6 mb-3">
 
                         <label for="add2" class="form-label">
@@ -390,12 +411,13 @@
 
                         <input type="text"
                                id="add2"
-                               name="add2"
+                               th:field="*{add2}"
                                class="form-control">
 
                     </div>
 
 
+                    <!-- ADD4 -->
                     <div class="col-md-6 mb-3">
 
                         <label for="add4" class="form-label">
@@ -404,7 +426,7 @@
 
                         <input type="text"
                                id="add4"
-                               name="add4"
+                               th:field="*{add4}"
                                class="form-control">
 
                     </div>
@@ -423,7 +445,7 @@
 
                         <input type="text"
                                id="countryName"
-                               name="countryName"
+                               th:field="*{countryName}"
                                class="form-control">
 
                     </div>
@@ -446,6 +468,7 @@
                 <!-- BANK NAME + BRANCH NAME -->
                 <div class="row">
 
+                    <!-- Bank Name -->
                     <div class="col-md-6 mb-3">
 
                         <label for="bankName" class="form-label">
@@ -454,12 +477,13 @@
 
                         <input type="text"
                                id="bankName"
-                               name="bankName"
+                               th:field="*{bankName}"
                                class="form-control">
 
                     </div>
 
 
+                    <!-- Branch Name -->
                     <div class="col-md-6 mb-3">
 
                         <label for="branchName" class="form-label">
@@ -468,7 +492,7 @@
 
                         <input type="text"
                                id="branchName"
-                               name="branchName"
+                               th:field="*{branchName}"
                                class="form-control">
 
                     </div>
@@ -479,6 +503,7 @@
                 <!-- ACCOUNT NUMBER + ROUTING NUMBER -->
                 <div class="row">
 
+                    <!-- Account Number -->
                     <div class="col-md-6 mb-3">
 
                         <label for="accountNumber" class="form-label">
@@ -487,12 +512,13 @@
 
                         <input type="text"
                                id="accountNumber"
-                               name="accountNumber"
+                               th:field="*{accountNumber}"
                                class="form-control">
 
                     </div>
 
 
+                    <!-- Routing Number -->
                     <div class="col-md-6 mb-3">
 
                         <label for="routingNumber" class="form-label">
@@ -501,7 +527,7 @@
 
                         <input type="text"
                                id="routingNumber"
-                               name="routingNumber"
+                               th:field="*{routingNumber}"
                                class="form-control">
 
                     </div>
@@ -515,7 +541,8 @@
         <!-- ==================== ACTIONS ==================== -->
         <div class="d-flex justify-content-center gap-2 mb-5">
 
-            <button type="submit" class="btn btn-primary">
+            <button type="submit"
+                    class="btn btn-primary">
                 Submit
             </button>
 
@@ -533,4 +560,3 @@
 
 </body>
 </html>
-
