@@ -18,7 +18,7 @@
 
     <h2 class="mb-4">Shareholder Registration</h2>
 
-    <form>
+    <form th:action="@{/shareholders}" th:object="${shareholder}" method="post">
 
         <!-- ==================== BASIC INFORMATION ==================== -->
         <div class="card mb-4">
