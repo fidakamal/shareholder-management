@@ -11,6 +11,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class ShareholderController {
 
+    private final ShareholderService shareholderService;
+
+    public ShareholderController(ShareholderService shareholderService) {
+        this.shareholderService = shareholderService;
+    }
+
     @GetMapping("/shareholders/new")
     public String showShareholderForm(Model model) {
 
