@@ -14,24 +14,43 @@ public class ShareholderController {
     @GetMapping("/shareholders/new")
     public String showShareholderForm(Model model) {
 
-        model.addAttribute("shareholder", new ShareholderDTO());
+        ShareholderFormDTO form = new ShareholderFormDTO();
+
+        form.setShareholder(new ShareholderDTO());
+        form.setAddress(new AddressDTO());
+
+        model.addAttribute("shareholderForm", form);
 
         return "shareholder/form";
     }
 
     @PostMapping("/shareholders")
     public String submitShareholder(
-            @Valid @ModelAttribute("shareholder") ShareholderDTO shareholder,
+            @Valid @ModelAttribute("shareholderForm") ShareholderFormDTO form,
             BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
             return "shareholder/form";
         }
 
-        System.out.println("Folio/BO: " + shareholder.getFolioBo());
-        System.out.println("Name: " + shareholder.getShareholderName());
-        System.out.println("Phone: " + shareholder.getPhone());
-        System.out.println("Email: " + shareholder.getEmail());
+        // Temporary console output
+        System.out.println("Folio/BO: "
+                + form.getShareholder().getFolioBo());
+
+        System.out.println("Name: "
+                + form.getShareholder().getShareholderName());
+
+        System.out.println("Phone: "
+                + form.getShareholder().getPhone());
+
+        System.out.println("Email: "
+                + form.getShareholder().getEmail());
+
+        System.out.println("Address 1: "
+                + form.getAddress().getAdd1());
+
+        System.out.println("Country: "
+                + form.getAddress().getCountryName());
 
         return "shareholder/form";
     }
