@@ -55,4 +55,6 @@ public class Shareholder {
 
     @Column(name = "ICB_CODE")
     private Integer icbCode;
+
+
 }
