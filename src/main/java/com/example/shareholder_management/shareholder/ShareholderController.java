@@ -33,14 +33,32 @@ public class ShareholderController {
     @PostMapping("/shareholders")
     public String submitShareholder(
             @Valid @ModelAttribute("shareholderForm") ShareholderFormDTO form,
-            BindingResult bindingResult) {
+            BindingResult bindingResult,
+            Model model) {
 
         if (bindingResult.hasErrors()) {
             return "shareholder/form";
         }
 
-        shareholderService.registerShareholder(form);
+        try {
 
-        return "redirect:/shareholders/new";
+            shareholderService.registerShareholder(form);
+
+            model.addAttribute(
+                    "successMessage",
+                    "Shareholder registered successfully!"
+            );
+
+            return "shareholder/form";
+
+        } catch (IllegalArgumentException e) {
+
+            model.addAttribute(
+                    "errorMessage",
+                    e.getMessage()
+            );
+
+            return "shareholder/form";
+        }
     }
 }
