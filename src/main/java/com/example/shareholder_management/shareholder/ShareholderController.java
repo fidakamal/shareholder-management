@@ -39,25 +39,8 @@ public class ShareholderController {
             return "shareholder/form";
         }
 
-        // Temporary console output
-        System.out.println("Folio/BO: "
-                + form.getShareholder().getFolioBo());
+        shareholderService.registerShareholder(form);
 
-        System.out.println("Name: "
-                + form.getShareholder().getShareholderName());
-
-        System.out.println("Phone: "
-                + form.getShareholder().getPhone());
-
-        System.out.println("Email: "
-                + form.getShareholder().getEmail());
-
-        System.out.println("Address 1: "
-                + form.getAddress().getAdd1());
-
-        System.out.println("Country: "
-                + form.getAddress().getCountryName());
-
-        return "shareholder/form";
+        return "redirect:/shareholders/new";
     }
 }

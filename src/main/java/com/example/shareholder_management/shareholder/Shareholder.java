@@ -14,7 +14,7 @@ import lombok.Setter;
 public class Shareholder {
 
     @Id
-    @Column(name = "OID")
+    @Column(name = "OID", length = 36, nullable = false)
     private String oid;
 
     @Column(name = "FOLIO_BO", nullable = false, unique = true)

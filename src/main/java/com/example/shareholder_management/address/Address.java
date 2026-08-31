@@ -14,7 +14,7 @@ import lombok.Setter;
 public class Address {
 
     @Id
-    @Column(name = "OID", length = 20, nullable = false)
+    @Column(name = "OID", length = 36, nullable = false)
     private String oid;
 
     @Column(name = "FOLIO_BO", length = 16, nullable = false)
