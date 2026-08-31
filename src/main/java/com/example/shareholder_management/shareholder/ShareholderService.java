@@ -142,4 +142,8 @@ public class ShareholderService {
 
         addressRepository.save(address);
     }
+
+    public java.util.List<Shareholder> getAllShareholders() {
+        return shareholderRepository.findAll();
+    }
 }

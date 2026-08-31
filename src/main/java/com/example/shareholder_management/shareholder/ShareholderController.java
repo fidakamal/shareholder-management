@@ -61,4 +61,15 @@ public class ShareholderController {
             return "shareholder/form";
         }
     }
+
+    @GetMapping("/shareholders")
+    public String listShareholders(Model model) {
+
+        model.addAttribute(
+                "shareholders",
+                shareholderService.getAllShareholders()
+        );
+
+        return "shareholder/list";
+    }
 }
